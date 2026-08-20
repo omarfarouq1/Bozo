@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>عمر & بسملة ❤️</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html,
+body{
+  width:100%;
+  min-height:100%;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#08060a;
+  color:white;
+  overflow-x:hidden;
+}
+
+
+/* =========================
+   الخلفية
+========================= */
+
+#mainSite{
+
+  min-height:100vh;
+  width:100%;
+
+  background:
+    linear-gradient(
+      rgba(10,7,12,.48),
+      rgba(10,7,12,.88)
+    ),
+    url("images/cover.jpg");
+
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+
+.hero{
+
+  min-height:100vh;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  padding:
+    35px
+    15px
+    50px;
+}
+
+
+.content{
+
+  width:100%;
+
+  max-width:620px;
+
+  animation:
+    fadeUp 1s ease;
+}
+
+
+/* =========================
+   القلب الرئيسي
+========================= */
+
+.heart{
+
+  font-size:58px;
+
+  margin-bottom:14px;
+
+  filter:
+    drop-shadow(
+      0 0 18px
+      rgba(233,87,139,.55)
+    );
+
+  animation:
+    heartbeat 1.7s infinite;
+}
+
+
+/* =========================
+   العنوان
+========================= */
+
+h2{
+
+  font-size:43px;
+
+  margin-bottom:12px;
+
+  text-shadow:
+    0 5px 25px
+    rgba(0,0,0,.5);
+}
+
+
+.names{
+
+  font-size:23px;
+
+  opacity:.92;
+
+  margin-bottom:10px;
+}
+
+
+.date{
+
+  font-size:15px;
+
+  opacity:.6;
+
+  margin-bottom:30px;
+}
+
+
+/* =========================
+   العداد
+========================= */
+
+.counter{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:12px;
+
+  margin-bottom:30px;
+}
+
+
+.box{
+
+  position:relative;
+
+  padding:20px 10px;
+
+  border-radius:23px;
+
+  background:
+    rgba(255,255,255,.035);
+
+  border:
+    1px solid
+    rgba(255,255,255,.18);
+
+  /* بدون ضبابية */
+
+  backdrop-filter:none;
+
+  -webkit-backdrop-filter:none;
+
+  box-shadow:
+    0 12px 30px
+    rgba(0,0,0,.25);
+
+  overflow:hidden;
+}
+
+
+.box::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:80px;
+
+  height:80px;
+
+  border-radius:50%;
+
+  background:
+    rgba(233,87,139,.10);
+
+  filter:blur(25px);
+
+  top:-30px;
+
+  right:-30px;
+}
+
+
+.number{
+
+  position:relative;
+
+  display:block;
+
+  font-size:30px;
+
+  font-weight:bold;
+
+  color:#ff9bbb;
+
+  text-shadow:
+    0 0 18px
+    rgba(255,155,187,.25);
+}
+
+
+.label{
+
+  position:relative;
+
+  display:block;
+
+  margin-top:5px;
+
+  font-size:11px;
+
+  opacity:.55;
+}
+
+
+/* =========================
+   أزرار الصفحات
+========================= */
+
+.buttons{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:12px;
+
+  margin-bottom:25px;
+}
+
+
+.btn{
+
+  min-height:105px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:8px;
+
+  border-radius:24px;
+
+  background:
+    rgba(255,255,255,.035);
+
+  border:
+    1px solid
+    rgba(255,255,255,.18);
+
+  backdrop-filter:none;
+
+  -webkit-backdrop-filter:none;
+
+  color:white;
+
+  text-decoration:none;
+
+  font-size:15px;
+
+  font-weight:bold;
+
+  box-shadow:
+    0 12px 30px
+    rgba(0,0,0,.25);
+
+  transition:.3s;
+}
+
+
+.btn span{
+
+  font-size:30px;
+}
+
+
+.btn:hover{
+
+  transform:
+    translateY(-5px);
+
+  background:
+    rgba(233,87,139,.12);
+}
+
+
+.btn:active{
+
+  transform:
+    scale(.96);
+}
+
+
+/* ==================================================
+   مشغل الموسيقى
+   جزء من الصفحة وليس ثابت
+================================================== */
+
+#musicPlayer{
+
+  position:relative;
+
+  width:100%;
+
+  margin-top:5px;
+
+  padding:14px;
+
+  border-radius:24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(25,15,23,.96),
+      rgba(8,7,11,.98)
+    );
+
+  border:
+    1px solid
+    rgba(255,255,255,.15);
+
+  box-shadow:
+    0 15px 40px
+    rgba(0,0,0,.40);
+
+  color:white;
+}
+
+
+/* =========================
+   معلومات الأغنية
+========================= */
+
+.music-top{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:13px;
+
+  margin-bottom:12px;
+}
+
+
+/* القلب المضيء */
+
+.music-heart{
+
+  width:55px;
+
+  height:55px;
+
+  flex-shrink:0;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:32px;
+
+  border-radius:17px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,90,145,.25),
+      rgba(255,90,145,.04)
+    );
+
+  box-shadow:
+
+    0 0 12px
+    rgba(255,70,130,.4),
+
+    0 0 30px
+    rgba(255,70,130,.18);
+
+  animation:
+    glowingHeart 1.5s infinite
+    ease-in-out;
+}
+
+
+@keyframes glowingHeart{
+
+  0%,
+  100%{
+
+    transform:scale(1);
+
+    filter:
+      drop-shadow(
+        0 0 5px
+        rgba(255,70,130,.5)
+      );
+  }
+
+  50%{
+
+    transform:scale(1.12);
+
+    filter:
+      drop-shadow(
+        0 0 18px
+        rgba(255,70,130,1)
+      );
+  }
+
+}
+
+
+.music-info{
+
+  flex:1;
+
+  min-width:0;
+
+  text-align:right;
+}
+
+
+.music-title{
+
+  font-size:14px;
+
+  font-weight:bold;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+  text-overflow:ellipsis;
+}
+
+
+.music-artist{
+
+  font-size:10px;
+
+  color:
+    rgba(255,255,255,.5);
+
+  margin-top:5px;
+}
+
+
+/* =========================
+   شريط التقدم
+========================= */
+
+.progress-container{
+
+  width:100%;
+
+  height:6px;
+
+  border-radius:20px;
+
+  background:
+    rgba(255,255,255,.12);
+
+  overflow:hidden;
+
+  cursor:pointer;
+}
+
+
+#progressBar{
+
+  width:0%;
+
+  height:100%;
+
+  border-radius:20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #e9578b,
+      #ffb0c8
+    );
+
+  box-shadow:
+    0 0 10px
+    rgba(255,100,150,.5);
+}
+
+
+/* =========================
+   الوقت
+========================= */
+
+.time-row{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  margin-top:5px;
+
+  font-size:9px;
+
+  color:
+    rgba(255,255,255,.45);
+}
+
+
+/* =========================
+   أزرار التحكم
+========================= */
+
+.controls{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:18px;
+
+  margin-top:8px;
+}
+
+
+.control-button{
+
+  width:40px;
+
+  height:40px;
+
+  border:0;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.08);
+
+  color:white;
+
+  font-size:16px;
+
+  cursor:pointer;
+
+  transition:.2s;
+}
+
+
+.play-button{
+
+  width:52px;
+
+  height:52px;
+
+  border:0;
+
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e9578b,
+      #9b365d
+    );
+
+  color:white;
+
+  font-size:20px;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 5px 20px
+    rgba(233,87,139,.4);
+
+  transition:.2s;
+}
+
+
+.control-button:active,
+.play-button:active{
+
+  transform:
+    scale(.88);
+}
+
+
+/* =========================
+   الصوت
+========================= */
+
+.volume-row{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  margin-top:10px;
+}
+
+
+#volumeControl{
+
+  width:100%;
+
+  height:4px;
+
+  accent-color:#e9578b;
+
+  cursor:pointer;
+}
+
+
+/* =========================
+   الأنيميشن
+========================= */
+
+@keyframes fadeUp{
+
+  from{
+
+    opacity:0;
+
+    transform:
+      translateY(35px);
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+@keyframes heartbeat{
+
+  0%,
+  100%{
+
+    transform:scale(1);
+  }
+
+  50%{
+
+    transform:scale(1.12);
+  }
+}
+
+
+/* =========================
+   الموبايل
+========================= */
+
+@media(max-width:600px){
+
+  .hero{
+
+    padding:
+      25px
+      12px
+      35px;
+  }
+
+
+  .heart{
+
+    font-size:50px;
+  }
+
+
+  h2{
+
+    font-size:34px;
+  }
+
+
+  .names{
+
+    font-size:19px;
+  }
+
+
+  .date{
+
+    font-size:13px;
+  }
+
+
+  .box{
+
+    padding:
+      17px
+      8px;
+  }
+
+
+  .number{
+
+    font-size:27px;
+  }
+
+
+  .btn{
+
+    min-height:95px;
+
+    font-size:13px;
+  }
+
+
+  .btn span{
+
+    font-size:27px;
+  }
+
+
+  #musicPlayer{
+
+    padding:12px;
+
+    border-radius:20px;
+  }
+
+
+  .music-heart{
+
+    width:46px;
+
+    height:46px;
+
+    font-size:28px;
+
+    border-radius:14px;
+  }
+
+
+  .music-title{
+
+    font-size:12px;
+  }
+
+
+  .music-artist{
+
+    font-size:9px;
+  }
+
+
+  .controls{
+
+    gap:14px;
+  }
+
+
+  .control-button{
+
+    width:36px;
+
+    height:36px;
+
+    font-size:14px;
+  }
+
+
+  .play-button{
+
+    width:47px;
+
+    height:47px;
+
+    font-size:18px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div id="mainSite">
+
+<section class="hero">
+
+<div class="content">
+
+
+<!-- القلب -->
+
+<div class="heart">
+❤️
+</div>
+
+
+<!-- العنوان -->
+
+<h2>
+عمر & بسملة
+</h2>
+
+
+<div class="names">
+حكاية بدأت يوم 7 يونيو 2025
+</div>
+
+
+<div class="date">
+ومن يومها بدأت أجمل ذكرياتنا
+</div>
+
+
+<!-- =========================
+     العداد
+========================= -->
+
+<div class="counter">
+
+
+<div class="box">
+
+<span
+class="number"
+id="days">
+0
+</span>
+
+<span class="label">
+يوم
+</span>
+
+</div>
+
+
+<div class="box">
+
+<span
+class="number"
+id="hours">
+0
+</span>
+
+<span class="label">
+ساعة
+</span>
+
+</div>
+
+
+<div class="box">
+
+<span
+class="number"
+id="minutes">
+0
+</span>
+
+<span class="label">
+دقيقة
+</span>
+
+</div>
+
+
+<div class="box">
+
+<span
+class="number"
+id="seconds">
+0
+</span>
+
+<span class="label">
+ثانية
+</span>
+
+</div>
+
+
+</div>
+
+
+<!-- =========================
+     الصفحات
+========================= -->
+
+<div class="buttons">
+
+
+<a
+href="memories.html"
+class="btn">
+
+<span>
+✨
+</span>
+
+ذكرياتنا
+
+</a>
+
+
+<a
+href="gallery.html"
+class="btn">
+
+<span>
+📸
+</span>
+
+ألبومنا
+
+</a>
+
+
+<a
+href="events.html"
+class="btn">
+
+<span>
+🎂
+</span>
+
+مناسباتنا
+
+</a>
+
+
+<a
+href="story.html"
+class="btn">
+
+<span>
+📖
+</span>
+
+قصتنا
+
+</a>
+
+
+</div>
+
+
+<!-- ==================================================
+     المشغل
+     موجود تحت الأزرار داخل الصفحة
+================================================== -->
+
+<div id="musicPlayer">
+
+
+<div class="music-top">
+
+
+<div class="music-heart">
+❤️
+</div>
+
+
+<div class="music-info">
+
+<div class="music-title">
+Our Song ❤️
+</div>
+
+<div class="music-artist">
+عمر & بسملة
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- شريط التقدم -->
+
+<div
+class="progress-container"
+id="progressContainer">
+
+<div id="progressBar"></div>
+
+</div>
+
+
+<!-- الوقت -->
+
+<div class="time-row">
+
+<span id="currentTime">
+0:00
+</span>
+
+<span id="duration">
+0:00
+</span>
+
+</div>
+
+
+<!-- التحكم -->
+
+<div class="controls">
+
+
+<button
+class="control-button"
+id="backButton"
+type="button">
+
+⏪
+
+</button>
+
+
+<button
+class="play-button"
+id="playButton"
+type="button">
+
+▶️
+
+</button>
+
+
+<button
+class="control-button"
+id="forwardButton"
+type="button">
+
+⏩
+
+</button>
+
+
+</div>
+
+
+<!-- الصوت -->
+
+<div class="volume-row">
+
+<span>
+🔊
+</span>
+
+<input
+type="range"
+id="volumeControl"
+min="0"
+max="1"
+step="0.01"
+value="0.7">
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+</div>
+
+
+<!-- =========================
+     الأغنية
+========================= -->
+
+<audio
+id="bgMusic"
+preload="metadata">
+
+<source
+src="audio/our-song.mp3"
+type="audio/mpeg">
+
+</audio>
+
+
+<script>
+
+
+/* ==================================================
+   العداد
+================================================== */
+
+const startDate =
+new Date(
+  "2025-06-07T00:00:00"
+);
+
+
+function updateCounter(){
+
+  const now =
+    new Date();
+
+
+  const difference =
+    now - startDate;
+
+
+  const days =
+    Math.floor(
+      difference /
+      (1000 * 60 * 60 * 24)
+    );
+
+
+  const hours =
+    Math.floor(
+      (
+        difference /
+        (1000 * 60 * 60)
+      ) % 24
+    );
+
+
+  const minutes =
+    Math.floor(
+      (
+        difference /
+        (1000 * 60)
+      ) % 60
+    );
+
+
+  const seconds =
+    Math.floor(
+      (
+        difference /
+        1000
+      ) % 60
+    );
+
+
+  document.getElementById("days")
+    .textContent = days;
+
+
+  document.getElementById("hours")
+    .textContent = hours;
+
+
+  document.getElementById("minutes")
+    .textContent = minutes;
+
+
+  document.getElementById("seconds")
+    .textContent = seconds;
+
+}
+
+
+updateCounter();
+
+
+setInterval(
+  updateCounter,
+  1000
+);
+
+
+/* ==================================================
+   مشغل الموسيقى
+================================================== */
+
+const music =
+document.getElementById("bgMusic");
+
+
+const playButton =
+document.getElementById("playButton");
+
+
+const backButton =
+document.getElementById("backButton");
+
+
+const forwardButton =
+document.getElementById("forwardButton");
+
+
+const progressBar =
+document.getElementById("progressBar");
+
+
+const progressContainer =
+document.getElementById("progressContainer");
+
+
+const currentTime =
+document.getElementById("currentTime");
+
+
+const duration =
+document.getElementById("duration");
+
+
+const volumeControl =
+document.getElementById("volumeControl");
+
+
+/* =========================
+   مستوى الصوت
+========================= */
+
+const savedVolume =
+localStorage.getItem(
+  "musicVolume"
+);
+
+
+if(savedVolume !== null){
+
+  music.volume =
+    parseFloat(savedVolume);
+
+  volumeControl.value =
+    savedVolume;
+
+}else{
+
+  music.volume =
+    0.7;
+
+}
+
+
+/* =========================
+   تحويل الوقت
+========================= */
+
+function formatTime(seconds){
+
+  if(!isFinite(seconds)){
+
+    return "0:00";
+
+  }
+
+
+  const minutes =
+    Math.floor(
+      seconds / 60
+    );
+
+
+  const secs =
+    Math.floor(
+      seconds % 60
+    );
+
+
+  return (
+    minutes +
+    ":" +
+    String(secs)
+      .padStart(2,"0")
+  );
+
+}
+
+
+/* =========================
+   استرجاع مكان الأغنية
+========================= */
+
+const savedTime =
+localStorage.getItem(
+  "musicTime"
+);
+
+
+if(savedTime !== null){
+
+  music.addEventListener(
+    "loadedmetadata",
+    function(){
+
+      music.currentTime =
+        Math.min(
+          parseFloat(savedTime),
+          music.duration
+        );
+
+    },
+    {
+      once:true
+    }
+  );
+
+}
+
+
+/* =========================
+   مدة الأغنية
+========================= */
+
+music.addEventListener(
+  "loadedmetadata",
+  function(){
+
+    duration.textContent =
+      formatTime(
+        music.duration
+      );
+
+  }
+);
+
+
+/* =========================
+   تشغيل وإيقاف
+========================= */
+
+playButton.onclick =
+function(){
+
+  if(music.paused){
+
+    music.play()
+
+      .then(function(){
+
+        playButton.textContent =
+          "⏸️";
+
+      })
+
+      .catch(function(){
+
+        alert(
+          "اضغط تشغيل مرة أخرى ❤️"
+        );
+
+      });
+
+  }else{
+
+    music.pause();
+
+    playButton.textContent =
+      "▶️";
+
+  }
+
+};
+
+
+/* =========================
+   تحديث الوقت
+========================= */
+
+music.addEventListener(
+  "timeupdate",
+  function(){
+
+    currentTime.textContent =
+      formatTime(
+        music.currentTime
+      );
+
+
+    if(music.duration){
+
+      const percent =
+        (
+          music.currentTime /
+          music.duration
+        ) * 100;
+
+
+      progressBar.style.width =
+        percent + "%";
+
+    }
+
+
+    localStorage.setItem(
+      "musicTime",
+      music.currentTime
+    );
+
+  }
+);
+
+
+/* =========================
+   تقديم 10 ثواني
+========================= */
+
+forwardButton.onclick =
+function(){
+
+  if(!music.duration){
+
+    return;
+
+  }
+
+
+  music.currentTime =
+    Math.min(
+      music.currentTime + 10,
+      music.duration
+    );
+
+};
+
+
+/* =========================
+   رجوع 10 ثواني
+========================= */
+
+backButton.onclick =
+function(){
+
+  music.currentTime =
+    Math.max(
+      music.currentTime - 10,
+      0
+    );
+
+};
+
+
+/* =========================
+   شريط التقدم
+========================= */
+
+progressContainer.onclick =
+function(event){
+
+  if(!music.duration){
+
+    return;
+
+  }
+
+
+  const rect =
+    this.getBoundingClientRect();
+
+
+  const position =
+    event.clientX -
+    rect.left;
+
+
+  const percent =
+    position /
+    rect.width;
+
+
+  music.currentTime =
+    percent *
+    music.duration;
+
+};
+
+
+/* =========================
+   الصوت
+========================= */
+
+volumeControl.addEventListener(
+  "input",
+  function(){
+
+    music.volume =
+      parseFloat(
+        this.value
+      );
+
+
+    localStorage.setItem(
+      "musicVolume",
+      this.value
+    );
+
+  }
+);
+
+
+/* =========================
+   حالة التشغيل
+========================= */
+
+music.addEventListener(
+  "play",
+  function(){
+
+    playButton.textContent =
+      "⏸️";
+
+  }
+);
+
+
+music.addEventListener(
+  "pause",
+  function(){
+
+    playButton.textContent =
+      "▶️";
+
+  }
+);
+
+
+/* =========================
+   خطأ الأغنية
+========================= */
+
+music.addEventListener(
+  "error",
+  function(){
+
+    playButton.textContent =
+      "⚠️";
+
+  }
+);
+
+
+/* =========================
+   حفظ مكان الأغنية
+========================= */
+
+window.addEventListener(
+  "beforeunload",
+  function(){
+
+    localStorage.setItem(
+      "musicTime",
+      music.currentTime
+    );
+
+  }
+);
+
+</script>
+
+</body>
+
+</html>
